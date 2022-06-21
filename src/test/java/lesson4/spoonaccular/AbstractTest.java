@@ -26,7 +26,6 @@ public class AbstractTest {
         }
         return null;
     }
-
     public File getFile(String name) {
         String resource = getClass().getSimpleName() + "/" + name;
         String file = Objects.requireNonNull(getClass().getResource(resource)).getFile();

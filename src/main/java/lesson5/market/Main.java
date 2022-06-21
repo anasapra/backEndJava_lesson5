@@ -23,7 +23,5 @@ public class Main {
         System.out.println(createdProduct);
         id = createdProduct.getId();
         marketService.deleteProduct(id);
-
     }
-
 }

@@ -22,6 +22,7 @@ public class GetCategoryByIdPozitiveTest extends AbstractTest {
     @SneakyThrows
     @Test
     void getCategoryByIdPozitiveTest() throws Exception{
+
         List<Product> productList = marketService.getProducts();
         System.out.println(productList);
         System.out.println(marketService.getProduct(116));

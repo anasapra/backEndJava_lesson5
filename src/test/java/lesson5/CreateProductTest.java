@@ -34,6 +34,7 @@ public class CreateProductTest extends AbstractTest {
         assertJson(marketService.deleteProduct(900), null );
 
     }
+
    //org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter
    // [java.lang.Thread arg0] in method [void lesson5.CreateProductTest.tearDown(java.lang.Thread) throws java.lang.Exception].
    @SneakyThrows
