@@ -29,5 +29,4 @@ public class GetCategoryByIdPozitiveTest extends AbstractTest {
         assertJson(getResource("products.json"), productList);
         assertJson(marketService.getProduct(116), "Vacuum cleaner Bosh JX500");
     }
-
 }
