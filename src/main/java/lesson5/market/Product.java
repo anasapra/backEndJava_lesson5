@@ -1,7 +1,5 @@
 package lesson5.market;
-
 import lombok.Data;
-
     @Data
     public class Product {
 
@@ -9,5 +7,4 @@ import lombok.Data;
         private String title;
         private Integer price;
         private String categoryTitle;
-
     }

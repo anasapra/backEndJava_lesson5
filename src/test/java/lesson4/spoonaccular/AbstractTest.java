@@ -4,6 +4,7 @@ import net.javacrumbs.jsonunit.JsonAssert;
 
 import java.io.File;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 import static net.javacrumbs.jsonunit.core.Option.IGNORING_ARRAY_ORDER;
@@ -19,12 +20,10 @@ public class AbstractTest {
 
     public String getResource(String name) throws Exception {
         String resource = getClass().getSimpleName() + "/" + name;
-        byte[] bytes;
-        try (InputStream inputStream = getClass().getResourceAsStream(resource)) {
-            assert inputStream != null;
-            bytes = inputStream.readAllBytes();
-        }
-        return null;
+        InputStream inputStream = getClass().getResourceAsStream(resource);
+        assert inputStream != null;
+        byte[] bytes = inputStream.readAllBytes();
+        return new String(bytes, StandardCharsets.UTF_8);
     }
     public File getFile(String name) {
         String resource = getClass().getSimpleName() + "/" + name;
