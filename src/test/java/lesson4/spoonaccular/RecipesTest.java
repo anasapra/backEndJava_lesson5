@@ -4,7 +4,6 @@ import io.restassured.path.json.JsonPath;
 import lesson4.*;
 import lesson4.spoonaccular.test.SpoonaccularTest;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -155,40 +154,7 @@ public class RecipesTest extends SpoonaccularTest {
                 .then()
                 .statusCode(200);
     }
-    //5 мой -  ---------------------------------------------------------------------------------------------------------
-// не проходит, хотя картинка одинаковая при разных ссылках :((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
-  @Disabled
-    @Test
-    void testCreateRecipeCard() {
-        given()
-                .pathParam("id", "4632")
-                .param("mask", "ellipseMask")
-                .param("backgroundImage", "background1")
-                .expect()
-              // .body("url", is("https://spoonacular.com/recipeCardImages/recipeCard-1653930502064.png"))
-                .when()
-                .get("/recipes/{id}/card")
-                .prettyPeek()
-                .then()
-                .statusCode(200);
-    }
 
-    //c урока 1+
-
-    @Test
-    void testAutocompleteSearch() throws Exception {
-        String actually = given()
-                .param("number", 10)
-                .param("query", "cheese")
-                .expect()
-                .when()
-                .get("recipes/autocomplete")
-                .body()
-                .prettyPrint();
-
-        String expected = getResource("expected.json");
-       assertJson(expected, actually);
-    }
 
     //с урока 2+
     @Test
